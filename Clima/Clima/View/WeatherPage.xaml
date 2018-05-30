@@ -10,7 +10,7 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BindingContext="{Binding StaticResource }">
             <SearchBar>
 
             </SearchBar>
@@ -45,7 +45,7 @@
                        Grid.Column="1" Grid.Row="2"/>
 
                 <Label Text="Ultima Actualizacion" 
-                       FontAttributes="Bold"/>
+                       FontAttributes="Bold" Grid.Row=""/>
                 <Label Text="{Binding UltimaActualizacion}" 
                        Grid.Column="1"/>
 
