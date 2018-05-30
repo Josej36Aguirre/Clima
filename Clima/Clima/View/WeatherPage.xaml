@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Clima.View.WeatherPage"
+              xmlns:local="clr-namespace:Clima.ViewModel">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ViewModel.WeatherViewModelpage x:Key="weather"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar>
+
+            </SearchBar>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Text="Ubicacion" 
+                       FontAttributes="Bold"/>
+                <Label Text="{Binding Ubicacion}" 
+                       Grid.Column="1"/>
+
+                <Label Text="Pais" 
+                       FontAttributes="Bold"/>
+                <Label Text="{Binding Pais}" 
+                       Grid.Column="1"/>
+
+                <Label Text="ResultTerm" 
+                       FontAttributes="Bold" Grid.Row="1"/>
+                <Label Text="{Binding ResultTerm}" 
+                       Grid.Column="1" Grid.Row="2"/>
+
+                <Label Text="Ultima Actualizacion" 
+                       FontAttributes="Bold"/>
+                <Label Text="{Binding UltimaActualizacion}" 
+                       Grid.Column="1"/>
+
+                <Label Text="Clima" 
+                       FontAttributes="Bold"/>
+                <Label Text="{Binding Clima}" 
+                       Grid.Column="1"/>
+
+                <Label Text="Temperatura" 
+                       FontAttributes="Bold"/>
+                <Label Text="{Binding Temperatura}" 
+                       Grid.Column="1"/>
+                
+                <Image Source="{Binding Imagen}"></Image>
+
+            </Grid>
+            
+        </StackLayout>
+      
+    </ContentPage.Content>
+</ContentPage>
