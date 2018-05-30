@@ -2,10 +2,13 @@
 
 namespace Clima.ViewModel
 {
+    using GalaSoft.MvvmLight.Command;
     using System;
     using System.Collections.Generic;
     using System.Net.Http;
+    using System.Runtime.Serialization;
     using System.Text;
+    using System.Windows.Input;
     using Xamarin.Forms;
     using Model;
 
@@ -119,6 +122,7 @@ namespace Clima.ViewModel
         }
         #endregion
 
+
         #region Metodos
         private async void Buscar()
         {
@@ -129,10 +133,19 @@ namespace Clima.ViewModel
             var jsonResult = response.Content.ReadAsStringAsync().Result;
             var weatherModel = Weather.FromJson(jsonResult);
             FijarValores(weatherModel);
+
         }
 
         private void FijarValores(Weather weatherModel)
         {
+            Ubicacion = weatherModel.Query.Results.Channel.Location.City;
+            Pais = weatherModel.Query.Results.Channel.Location.Country;
+            Region = weatherModel.Query.Results.Channel.Location.Region;
+            UltimaActualizacion = weatherModel.Query.Results.Channel.Item.Condition.Date;
+            Temperatura = weatherModel.Query.Results.Channel.Item.Condition.Temp;
+            Clima = weatherModel.Query.Results.Channel.Item.Condition.Text;
+            var imgLink = $"http://l.yimg.com/a/i/us/we/52/{weatherModel.Query.Results.Channel.Item.Condition.Code}.gif";
+            Imagen = ImageSource.FromUri(new Uri(imgLink));
 
         }
 

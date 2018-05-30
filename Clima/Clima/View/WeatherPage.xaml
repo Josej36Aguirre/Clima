@@ -10,9 +10,10 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <StackLayout BindingContext="{Binding StaticResource }">
-            <SearchBar>
-
+        <StackLayout BindingContext="{Binding Source={StaticResource weather}}">
+            <SearchBar Placeholder="Ingrese cidudad"
+                       Text="{Binding ResulTerm}"
+                       SearchCommand="{Binding BuscarCommand}">
             </SearchBar>
             <Grid>
                 <Grid.RowDefinitions>
@@ -29,40 +30,51 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
+                <!--label ubicación-->
                 <Label Text="Ubicacion" 
                        FontAttributes="Bold"/>
                 <Label Text="{Binding Ubicacion}" 
                        Grid.Column="1"/>
 
+                <!--label Pais-->
                 <Label Text="Pais" 
                        FontAttributes="Bold"/>
                 <Label Text="{Binding Pais}" 
                        Grid.Column="1"/>
-
+                
+                <!--label Result Term-->
                 <Label Text="ResultTerm" 
                        FontAttributes="Bold" Grid.Row="1"/>
                 <Label Text="{Binding ResultTerm}" 
                        Grid.Column="1" Grid.Row="2"/>
 
+                <!--label Ultima Actualización-->
                 <Label Text="Ultima Actualizacion" 
-                       FontAttributes="Bold" Grid.Row=""/>
+                       FontAttributes="Bold" 
+                       Grid.Row="2"/>
                 <Label Text="{Binding UltimaActualizacion}" 
-                       Grid.Column="1"/>
+                       Grid.Column="1" Grid.Row="2"/>
 
+                <!--label Clima-->
                 <Label Text="Clima" 
-                       FontAttributes="Bold"/>
+                       FontAttributes="Bold"
+                       Grid.Row="3"/>
                 <Label Text="{Binding Clima}" 
-                       Grid.Column="1"/>
+                       Grid.Column="1"
+                       Grid.Row="3"/>
 
+                <!--label Temperatura-->
                 <Label Text="Temperatura" 
-                       FontAttributes="Bold"/>
+                       FontAttributes="Bold"
+                       Grid.Row="4"/>
                 <Label Text="{Binding Temperatura}" 
-                       Grid.Column="1"/>
-                
-                <Image Source="{Binding Imagen}"></Image>
+                       Grid.Column="1" 
+                       Grid.Row="4"/>
+               
 
             </Grid>
-            
+
+            <Image Source="{Binding Imagen}"></Image>
         </StackLayout>
       
     </ContentPage.Content>

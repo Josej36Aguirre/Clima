@@ -17,7 +17,7 @@ namespace Clima.Model
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
-    public partial class Wather
+    public partial class Weather
     {
         [JsonProperty("query")]
         public Query Query { get; set; }
