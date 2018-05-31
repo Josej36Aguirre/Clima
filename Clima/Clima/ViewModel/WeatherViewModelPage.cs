@@ -131,8 +131,8 @@ namespace Clima.ViewModel
             var response = await cliente.GetAsync(cliente.BaseAddress);
             response.EnsureSuccessStatusCode();
             var jsonResult = response.Content.ReadAsStringAsync().Result;
-            var weatherModel = Weather.FromJson(jsonResult);
-            FijarValores(weatherModel);
+            //var weatherModel = Weather.FromJson(jsonResult);
+          //  FijarValores(weatherModel);
 
         }
 
