@@ -5,7 +5,7 @@
               xmlns:local="clr-namespace:Clima.ViewModel">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local:ViewModel.WeatherViewModelpage x:Key="weather"/>
+            <local:ViewModel.WeatherViewModelPage x:Key="weather"/>
         </ResourceDictionary>
     </ContentPage.Resources>
     
